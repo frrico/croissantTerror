@@ -87,7 +87,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f565d86f2dc2c4e4abc563ae06655818, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -156,7 +156,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038e78f8cd45edd43ad907ba0a601fc7, type: 3}
---- !u!4 &6548922330363744618 stripped
+--- !u!4 &6730853205083240066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 038e78f8cd45edd43ad907ba0a601fc7, type: 3}
   m_PrefabInstance: {fileID: 6548922330363744617}
@@ -172,6 +172,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2f09926a99c940b4ab3ad2ce5503f9d6, type: 3}
       propertyPath: m_RootOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2f09926a99c940b4ab3ad2ce5503f9d6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f09926a99c940b4ab3ad2ce5503f9d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,7 +241,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_LocalPosition.x
@@ -313,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_Name
-      value: BreadFinal Variant
+      value: _TerrifyingCroissant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -326,7 +330,7 @@ PrefabInstance:
       addedObject: {fileID: 7078989329740419730}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6548922330363744618}
+      addedObject: {fileID: 6730853205083240066}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
 --- !u!4 &8293459875647751594 stripped
