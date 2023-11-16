@@ -540,7 +540,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1562408423}
+  m_Mesh: {fileID: 688112581}
 --- !u!33 &296843740
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -1492,6 +1492,87 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472589643}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &483870463
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3280616
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0068332
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.059999943
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.997
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900621024067994593, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 900621024067994593, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 01fb371ae12e71b44b827a1730726946, type: 2}
+    - target: {fileID: 900621024067994593, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2768156946775560619, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+    - target: {fileID: 919132149155446097, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
+      propertyPath: m_Name
+      value: gothicPlantArch
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f764050138188443bc2ebf8c682ed8c, type: 3}
 --- !u!1 &515150466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,7 +2970,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1061898612}
+  m_Mesh: {fileID: 45665954}
 --- !u!33 &1041302663
 MeshFilter:
   m_ObjectHideFlags: 10
