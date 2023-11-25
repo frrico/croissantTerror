@@ -1,4 +1,3 @@
-
 using System.Collections;
 
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 
 
-public class enemyAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 
 {
 
@@ -27,17 +26,17 @@ public class enemyAI : MonoBehaviour
 
     public Transform player;
 
-    public Transform currentDest;
+    Transform currentDest;
 
-    public Vector3 dest;
+    Vector3 dest;
+
+    int randNum;
+
+    public int destinationAmount;
 
     public Vector3 rayCastOffset;
 
     public string deathScene;
-
-    public float aiDistance;
-
-    public GameObject hideText, stopHideText;
 
 
 
@@ -47,7 +46,9 @@ public class enemyAI : MonoBehaviour
 
         walking = true;
 
-        currentDest = destinations[Random.Range(0, destinations.Count)];
+        randNum = Random.Range(0, destinations.Count);
+
+        currentDest = destinations[randNum];
 
     }
 
@@ -58,8 +59,6 @@ public class enemyAI : MonoBehaviour
         Vector3 direction = (player.position - transform.position).normalized;
 
         RaycastHit hit;
-
-        aiDistance = Vector3.Distance(player.position, this.transform.position);
 
         if (Physics.Raycast(transform.position + rayCastOffset, direction, out hit, sightDistance))
 
@@ -97,9 +96,11 @@ public class enemyAI : MonoBehaviour
 
             aiAnim.ResetTrigger("idle");
 
-            aiAnim.SetTrigger("sprint");
+            aiAnim.SetTrigger("chase");
 
-            if (aiDistance <= catchDistance)
+            float distance = Vector3.Distance(player.position, ai.transform.position);
+
+            if (distance <= catchDistance)
 
             {
 
@@ -109,13 +110,9 @@ public class enemyAI : MonoBehaviour
 
                 aiAnim.ResetTrigger("idle");
 
-                hideText.SetActive(false);
+                aiAnim.ResetTrigger("chase");
 
-                stopHideText.SetActive(false);
-
-                aiAnim.ResetTrigger("sprint");
-
-                aiAnim.SetTrigger("jumpscare");
+                aiAnim.SetTrigger("jumpScare");
 
                 StartCoroutine(deathRoutine());
 
@@ -135,7 +132,7 @@ public class enemyAI : MonoBehaviour
 
             ai.speed = walkSpeed;
 
-            aiAnim.ResetTrigger("sprint");
+            aiAnim.ResetTrigger("chase");
 
             aiAnim.ResetTrigger("idle");
 
@@ -145,7 +142,7 @@ public class enemyAI : MonoBehaviour
 
             {
 
-                aiAnim.ResetTrigger("sprint");
+                aiAnim.ResetTrigger("chase");
 
                 aiAnim.ResetTrigger("walk");
 
@@ -165,20 +162,6 @@ public class enemyAI : MonoBehaviour
 
     }
 
-    public void stopChase()
-
-    {
-
-        walking = true;
-
-        chasing = false;
-
-        StopCoroutine("chaseRoutine");
-
-        currentDest = destinations[Random.Range(0, destinations.Count)];
-
-    }
-
     IEnumerator stayIdle()
 
     {
@@ -189,7 +172,9 @@ public class enemyAI : MonoBehaviour
 
         walking = true;
 
-        currentDest = destinations[Random.Range(0, destinations.Count)];
+        randNum = Random.Range(0, destinations.Count);
+
+        currentDest = destinations[randNum];
 
     }
 
@@ -201,7 +186,13 @@ public class enemyAI : MonoBehaviour
 
         yield return new WaitForSeconds(chaseTime);
 
-        stopChase();
+        walking = true;
+
+        chasing = false;
+
+        randNum = Random.Range(0, destinations.Count);
+
+        currentDest = destinations[randNum];
 
     }
 
