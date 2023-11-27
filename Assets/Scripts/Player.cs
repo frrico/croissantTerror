@@ -137,7 +137,10 @@ public class PlayerMovement : MonoBehaviour
 
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
 
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+
+            // TO RE-ENABLE CAMERA ROTAION,
+            //MAKE THE FIRST lookXLimit NEGATIVE V--(this one, like this -lookXlimit)
+            rotationX = Mathf.Clamp(rotationX, lookXLimit, lookXLimit);
 
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
 
