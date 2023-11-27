@@ -43,6 +43,9 @@ public class EnemyAI : MonoBehaviour
     void Start()
 
     {
+        
+
+
 
         walking = true;
 
