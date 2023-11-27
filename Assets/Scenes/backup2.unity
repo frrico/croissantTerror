@@ -6441,6 +6441,10 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4614817316703795234, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6158055771042377995, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
       propertyPath: player
       value: 
