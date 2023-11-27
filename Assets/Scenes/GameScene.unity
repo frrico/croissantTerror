@@ -5426,7 +5426,11 @@ PrefabInstance:
     - target: {fileID: 6158055771042377995, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
       propertyPath: destinationAmount
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 1
+=======
+      value: 4
+>>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
 =======
       value: 4
 >>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
@@ -5465,11 +5469,17 @@ PrefabInstance:
       objectReference: {fileID: 964373047}
     - target: {fileID: 6736320180469495576, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
       propertyPath: m_UpdateMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6736320180469495576, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
+<<<<<<< HEAD
+>>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
+=======
 >>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
       propertyPath: m_ApplyRootMotion
       value: 1
@@ -5485,11 +5495,19 @@ PrefabInstance:
     - target: {fileID: 8293459875647751594, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 10.29
       objectReference: {fileID: 0}
     - target: {fileID: 8293459875647751594, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.685
+=======
+      value: 3.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293459875647751594, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.545
+>>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
 =======
       value: 3.08
       objectReference: {fileID: 0}
@@ -76387,6 +76405,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 5860368701010832477, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_ClearFlags
       value: 1
@@ -76407,6 +76426,8 @@ PrefabInstance:
       propertyPath: gravity
       value: 20
 =======
+=======
+>>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
     - target: {fileID: 3974416971830429060, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_RenderMode
       value: 0
@@ -76418,6 +76439,9 @@ PrefabInstance:
     - target: {fileID: 5860368701010832477, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_TargetDisplay
       value: 0
+<<<<<<< HEAD
+>>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
+=======
 >>>>>>> 7a84cfaa7c41c44cd5f7fecc74507d3ee58aef5c
       objectReference: {fileID: 0}
     - target: {fileID: 8741930519236893606, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
