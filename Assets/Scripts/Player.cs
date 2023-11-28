@@ -32,11 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
     public float crouchSpeed = 3f;
 
+    public GameObject Footstep;
+
     private Animator animator;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private CharacterController characterController;
     private bool canMove = true;
+    private bool invoked = false;
     void Start()
 
     {
@@ -47,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         Cursor.visible = false;
+        Footstep.SetActive(false);
 
     }
 
@@ -139,11 +143,13 @@ public class PlayerMovement : MonoBehaviour
         {
             //idle
             animator.SetFloat("Speed", 0);
+            StopFootsteps();
         }
         else
         {
             //walk/run
             animator.SetFloat("Speed", 1);
+            Footsteps();
         }
 
 
@@ -163,6 +169,15 @@ public class PlayerMovement : MonoBehaviour
 
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
 
+        }
+
+        void Footsteps()
+        {
+            Footstep.SetActive(true);
+        }
+        void StopFootsteps()
+        {
+            Footstep.SetActive(false);
         }
 
     }
