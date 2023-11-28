@@ -43,6 +43,9 @@ public class EnemyAI : MonoBehaviour
     void Start()
 
     {
+        
+
+
 
         walking = true;
 
@@ -67,7 +70,7 @@ public class EnemyAI : MonoBehaviour
             if (hit.collider.gameObject.tag == "Player")
 
             {
-
+                
                 walking = false;
 
                 StopCoroutine("stayIdle");
@@ -154,7 +157,7 @@ public class EnemyAI : MonoBehaviour
 
                 StartCoroutine("stayIdle");
 
-                walking = false;
+                walking = true;
 
             }
 
