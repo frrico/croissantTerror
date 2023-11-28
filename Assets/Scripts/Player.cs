@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     public float crouchHeight = 1f;
 
     public float crouchSpeed = 3f;
+
+    private Animator animator;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private CharacterController characterController;
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -64,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
         float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
 
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+
+        int MovementSpeed = (int)curSpeedX + (int)curSpeedY;
 
         float movementDirectionY = moveDirection.y;
 
@@ -128,6 +133,18 @@ public class PlayerMovement : MonoBehaviour
 
 
         characterController.Move(moveDirection * Time.deltaTime);
+
+        //Animation
+        if(MovementSpeed == 0)
+        {
+            //idle
+            animator.SetFloat("Speed", 0);
+        }
+        else
+        {
+            //walk/run
+            animator.SetFloat("Speed", 1);
+        }
 
 
 
