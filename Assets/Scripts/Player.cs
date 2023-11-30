@@ -250,7 +250,7 @@ public class PlayerMovement : MonoBehaviour
 
     void collectItem()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 2f); // Adjust the radius as needed
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 2f); // Radius to check for colliders
 
         foreach (Collider collider in colliders)
         {
@@ -270,7 +270,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Implement logic to collect the item (e.g., disable the item's renderer and collider)
         item.SetActive(false);
-    
+
+        
+
     }
 
     void interactWithObjective()
