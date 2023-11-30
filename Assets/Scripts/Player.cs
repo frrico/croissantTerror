@@ -1,9 +1,11 @@
 using System.Collections;
 
 using System.Collections.Generic;
-
+using Unity.VisualScripting;
+using UnityEditor.Build.Content;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 
 
 [RequireComponent(typeof(CharacterController))]
@@ -40,6 +42,15 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private bool canMove = true;
     private bool invoked = false;
+
+    public GameManager gameManager;
+
+    //pickup variables
+    public float pickupRange = 2f;
+    public TextMeshProUGUI pickupText;
+
+    //interaction distance
+    public float interactionRange = 5f;
     void Start()
 
     {
@@ -51,6 +62,11 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.visible = false;
         Footstep.SetActive(false);
+
+        if(pickupText != null)
+        {
+            pickupText.gameObject.SetActive(false);
+        }
 
     }
 
@@ -77,6 +93,20 @@ public class PlayerMovement : MonoBehaviour
         float movementDirectionY = moveDirection.y;
 
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+        checkForItems();
+
+        //collection mechanic
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            collectItem();
+        }
+
+        //interaction with ovens
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            interactWithObjective();
+        }
 
 
 
@@ -180,6 +210,83 @@ public class PlayerMovement : MonoBehaviour
             Footstep.SetActive(false);
         }
 
+    }
+
+    void checkForItems()
+    {
+      Collider[] colliders = Physics.OverlapSphere(transform.position, pickupRange);
+
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Collectible"))
+            {
+                // Display pickup message
+                ShowPickupMessage();
+
+                return; // Exit the loop after finding one collectible
+            }
+        }
+
+        // No collectible nearby, hide the pickup message
+        HidePickupMessage();
+    }
+
+    void ShowPickupMessage()
+    {
+        if (pickupText != null)
+        {
+            pickupText.gameObject.SetActive(true);
+        }
+    }
+
+    void HidePickupMessage()
+    {
+        if (pickupText != null)
+        {
+            pickupText.gameObject.SetActive(false);
+        }
+    }
+
+
+    void collectItem()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 2f); // Adjust the radius as needed
+
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Collectible"))
+            {
+                // Collect the item
+
+                CollectCroissant(collider.gameObject);
+            }
+        }
+    }
+
+    void CollectCroissant(GameObject item)
+    {
+        // Inform the GameManager that an item is collected
+        gameManager.ItemCollected();
+
+        // Implement logic to collect the item (e.g., disable the item's renderer and collider)
+        item.SetActive(false);
+    
+    }
+
+    void interactWithObjective()
+    {
+        Debug.Log("interacting");
+        float distanceToObjective = Vector3.Distance(transform.position, gameManager.objectiveArea.position);
+        Debug.Log("distance: " + distanceToObjective);
+
+        if (distanceToObjective <= interactionRange)
+        {
+            Debug.Log("player is close enough");
+            gameManager.TryInteractWithObjective();
+        }
+        else{
+            Debug.Log("not close");
+        }
     }
 
 }
