@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         collectedItems = 0;
+        SpawnCroissants();
         //set interaction text to hidden
         if(interactionPrompt != null)
         {
@@ -46,8 +47,8 @@ public class GameManager : MonoBehaviour
 
     Vector3 GenerateRandomPosition()
     {
-        float x = Random.Range(-20f, 20f); // Adjust the range based on your scene size
-        float z = Random.Range(-20f, 20f); // Adjust the range based on your scene size
+        float x = Random.Range(-15f, 15f); // Adjust the range based on your scene size
+        float z = Random.Range(-15f, 15f); // Adjust the range based on your scene size
 
         Vector3 randomPosition = new Vector3(x, 0f, z);
         return randomPosition;
