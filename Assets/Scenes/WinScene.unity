@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09181083, g: 0.09337396, b: 0.1518588, a: 1}
+  m_IndirectSpecularColor: {r: 0.09181083, g: 0.093374155, b: 0.1518588, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9356,6 +9356,7 @@ GameObject:
   - component: {fileID: 111648123}
   - component: {fileID: 111648122}
   - component: {fileID: 111648121}
+  - component: {fileID: 111648124}
   m_Layer: 0
   m_Name: Quit Button
   m_TagString: Untagged
@@ -9428,8 +9429,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 987387965}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 111648124}
+        m_TargetAssemblyTypeName: QuitScript, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -9478,6 +9479,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111648119}
   m_CullTransparentMesh: 1
+--- !u!114 &111648124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111648119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dceedb782b89a54084e5ef860a27c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &122539307 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa1b204bca644fa4e8fd6dffc37f583e, type: 3}
@@ -25017,6 +25030,7 @@ GameObject:
   - component: {fileID: 512918078}
   - component: {fileID: 512918077}
   - component: {fileID: 512918076}
+  - component: {fileID: 512918079}
   m_Layer: 0
   m_Name: Restart
   m_TagString: Untagged
@@ -25089,9 +25103,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 987387966}
-        m_TargetAssemblyTypeName: WinScript, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 512918079}
+        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+        m_MethodName: restartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25139,6 +25153,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512918074}
   m_CullTransparentMesh: 1
+--- !u!114 &512918079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512918074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d6cacb2bf05a4683a9a75b17a2c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &513185814
 PrefabInstance:
   m_ObjectHideFlags: 0
