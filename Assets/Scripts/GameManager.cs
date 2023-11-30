@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public Transform objectiveArea;
 
+    public GameObject croissantCollectible;
+
     public TextMeshProUGUI interactionPrompt;
 
     public string winScene = "WinScene";
@@ -32,6 +34,25 @@ public class GameManager : MonoBehaviour
         collectedItems++;
 
     }
+
+    public void SpawnCroissants()
+    {
+        for (int i = 0; i < totalItems; i++)
+        {
+            Vector3 randomPosition = GenerateRandomPosition();
+            Instantiate(croissantCollectible, randomPosition, Quaternion.identity);
+        }
+    }
+
+    Vector3 GenerateRandomPosition()
+    {
+        float x = Random.Range(-20f, 20f); // Adjust the range based on your scene size
+        float z = Random.Range(-20f, 20f); // Adjust the range based on your scene size
+
+        Vector3 randomPosition = new Vector3(x, 0f, z);
+        return randomPosition;
+    }
+
 
     public void WinGame()
     {
