@@ -36,12 +36,15 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject Footstep;
 
+    public GameObject Projectile;
+
     private Animator animator;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private CharacterController characterController;
     private bool canMove = true;
     private bool invoked = false;
+    private float throwSpeed = 0;
 
     public GameManager gameManager;
 
@@ -118,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+
         else
 
         {
@@ -162,6 +166,11 @@ public class PlayerMovement : MonoBehaviour
 
             runSpeed = 12f;
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            shoot();
         }
 
 
@@ -289,6 +298,11 @@ public class PlayerMovement : MonoBehaviour
         else{
             Debug.Log("not close");
         }
+    }
+
+    void shoot()
+    {
+        Instantiate(Projectile, this.transform.position, this.transform.rotation);
     }
 
 }
