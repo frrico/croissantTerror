@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float crouchSpeed = 3f;
 
+    public int ammo = 5;
+
     public GameObject Footstep;
 
     public GameObject Projectile;
@@ -307,14 +309,34 @@ public class PlayerMovement : MonoBehaviour
     void Shoot()
     {
 
-        GameObject proj = Instantiate(Projectile, PlayerTrans.transform.position + (transform.forward*2), Quaternion.identity);
+        if (ammo > 0)
+        {
+            // Instantiate a projectile matching the players position and rotation
+            GameObject proj = Instantiate(Projectile, PlayerTrans.transform.position + (transform.forward * 2), Quaternion.identity);
+            ammo--;
+            Debug.Log(ammo + " remaining");
+
+            // Apply forces to the projectile in the direction the player is facing 
+            //DEBUG: proj.GetComponent<Rigidbody>().AddForce((PlayerTrans.forward) * 15f, ForceMode.Impulse);
+            proj.GetComponent<Rigidbody>().AddForce((PlayerTrans.forward) * 15f, ForceMode.Impulse);
+
+            // Destroy each projectile after 5 seconds
+            Destroy(proj, 5f);
+        }
  
-        proj.GetComponent<Rigidbody>().AddForce((PlayerTrans.forward) * 15f, ForceMode.Impulse);
+        if (ammo == 0)
+        {
+            StartCoroutine(reload());
+        }
 
-        Destroy(proj, 5f);
+    }
 
-        Debug.Log("Pew~!");
-
+    IEnumerator reload()
+    {
+        yield return new WaitForSeconds(3);
+        ammo = 5;
+        Debug.Log(ammo);
+        Shoot();
     }
 
 }
