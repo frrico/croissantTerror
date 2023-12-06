@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Camera playerCamera;
 
+    public Transform PlayerTrans;
+
     public float walkSpeed = 6f;
 
     public float runSpeed = 12f;
@@ -44,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private bool canMove = true;
     private bool invoked = false;
-    private float throwSpeed = 0;
+    
 
     public GameManager gameManager;
 
@@ -168,9 +170,11 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyUp("e"))
         {
-            shoot();
+            Debug.Log("e pressed");
+
+            Shoot();
         }
 
 
@@ -300,9 +304,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void shoot()
+    void Shoot()
     {
-        Instantiate(Projectile, this.transform.position, this.transform.rotation);
+
+        GameObject proj = Instantiate(Projectile, PlayerTrans.transform.position + (transform.forward*2), Quaternion.identity);
+ 
+        proj.GetComponent<Rigidbody>().AddForce((PlayerTrans.forward) * 15f, ForceMode.Impulse);
+
+        Destroy(proj, 5f);
+
+        Debug.Log("Pew~!");
+
     }
 
 }
