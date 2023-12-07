@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject Footstep;
 
+    public GameObject Throw;
+
     public GameObject Projectile;
 
     private Animator animator;
@@ -69,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.visible = false;
         Footstep.SetActive(false);
+        Throw.SetActive(false);
 
         if(pickupText != null)
         {
@@ -225,6 +228,7 @@ public class PlayerMovement : MonoBehaviour
             Footstep.SetActive(false);
         }
 
+
     }
 
     void checkForItems()
@@ -313,33 +317,58 @@ public class PlayerMovement : MonoBehaviour
         {
             // Instantiate a projectile matching the players position and rotation
             GameObject proj = Instantiate(Projectile, PlayerTrans.transform.position + (transform.forward * 2), Quaternion.identity);
+
             ammo--;
+
             Debug.Log(ammo + " remaining");
 
             // Apply forces to the projectile in the direction the player is facing 
-            //DEBUG: proj.GetComponent<Rigidbody>().AddForce((PlayerTrans.forward) * 15f, ForceMode.Impulse);
-            proj.GetComponent<Rigidbody>().AddForce((PlayerTrans.forward) * 15f, ForceMode.Impulse);
+            
+            Vector3 throwDirection = PlayerTrans.forward * 200f;
+
+            throwDirection.y = 9f;
+
+            proj.GetComponent<Rigidbody>().AddForce(throwDirection, ForceMode.Impulse);
+
+            Chuck();
+            //StopChuck();
+
+
+            if (ammo <=0 )
+            {
+                reload();
+            }
 
             // Destroy each projectile after 5 seconds
             Destroy(proj, 5f);
         }
- 
-        if (ammo == 0)
-        {
-            StartCoroutine(reload());
-        }
-
     }
 
-    IEnumerator reload()
+    void Chuck()
     {
-        yield return new WaitForSeconds(3);
+        Throw.SetActive(true);
+        Invoke("StopChuck", .1f);
+    }
 
+    void StopChuck()
+    {
+        Throw.SetActive(false);
+    }
+
+
+    void reload()
+    {
+
+        // yield return new WaitForSeconds(3);
+        Invoke("completeReload", 3f);
+    
+    }
+
+    void completeReload()
+    {
         ammo = 5;
 
-        Debug.Log(ammo);
-
-        Shoot();
+        Debug.Log("reload");
     }
 
 }

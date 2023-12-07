@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Collectible
+  - Pan
   layers:
   - Default
   - TransparentFX
