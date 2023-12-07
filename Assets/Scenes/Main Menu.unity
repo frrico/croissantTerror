@@ -28271,7 +28271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &686343557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28301,7 +28301,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e64171de3f1b2e142999b341601dd817, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 4183496557873674682cb2ae8854fad7, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &686343558
 Transform:
@@ -56621,7 +56621,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395621123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1414, y: 1.1414, z: 1.1414}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56630,7 +56630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47, y: 155}
+  m_AnchoredPosition: {x: -110.1, y: 156.3}
   m_SizeDelta: {x: 387.1057, y: 39.5192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1395621125
@@ -56680,8 +56680,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 31.12
+  m_fontSizeBase: 31.12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -70100,7 +70100,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775832628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.51925, y: 0.247048, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70109,7 +70109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -93.05618, y: 135.40085}
+  m_AnchoredPosition: {x: -150.4, y: 143}
   m_SizeDelta: {x: 26.7456, y: 11.3407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1775832630
