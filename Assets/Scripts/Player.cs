@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
 
         {
-
+            Debug.Log("boing");
             moveDirection.y = jumpPower;
 
         }
@@ -334,8 +334,11 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator reload()
     {
         yield return new WaitForSeconds(3);
+
         ammo = 5;
+
         Debug.Log(ammo);
+
         Shoot();
     }
 
