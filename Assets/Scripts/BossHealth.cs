@@ -10,6 +10,7 @@ public class BossHealth : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
+    public Transform BossTrans;
 
     public AudioClip hitSound;
 
@@ -24,6 +25,7 @@ public class BossHealth : MonoBehaviour
 
     private float cordsx;
     private float cordsy;
+    private float cordsz;
 
 
     public GameManager gameManager;
@@ -40,14 +42,17 @@ public class BossHealth : MonoBehaviour
             originalMaterial = skinnedMeshRenderer.material;
         }
 
-        StartCoroutine(spawncrossiants(swarmerInterval, crossiants));
-        
+        //StartCoroutine(spawncrossiants(swarmerInterval, crossiants));
+        //StartCoroutine(spawncrossiants(swarmerInterval, crossiants, transform.position));
+        StartCoroutine(spawnMinis());
+
     }
 
     private void Update()
     {
-        cordsx = this.transform.position.x;
-        cordsy = this.transform.position.y;
+        cordsx = BossTrans.transform.position.x;
+        cordsy = BossTrans.transform.position.y;
+        cordsz = BossTrans.transform.position.z;
     }
 
     public void TakeDamage(int damage)
@@ -85,13 +90,27 @@ public class BossHealth : MonoBehaviour
         
     }
 
-   // _____________________Coroutine to coninously spawn crossiants_____________________________//
-    private IEnumerator spawncrossiants(float interval , GameObject enemy)
-    {
-        yield return new WaitForSeconds (interval);
-        GameObject newEnemy = Instantiate(enemy , new Vector3 (cordsx, cordsy, 0),Quaternion.identity);
-        StartCoroutine(spawncrossiants(interval, enemy));
-    }
+    // _____________________Coroutine to coninously spawn crossiants_____________________________//
+    //private IEnumerator spawncrossiants(float interval, GameObject enemy, Vector3 spawnPosition)
+    //{
+        //yield return new WaitForSeconds(interval);
+        //GameObject newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+        //StartCoroutine(spawncrossiants(interval, enemy, spawnPosition));
+        //Debug.Log("spawn");
+   // }
     // _________________________________________________________________________________________//
+
+    // THIS SEEMS TO WORK, ALTHOUGH THEY DO NOT CHASE
+    private IEnumerator spawnMinis()
+    {
+
+        Vector3 Position = new Vector3(cordsx, cordsy -1, cordsz);
+        GameObject mini = Instantiate(crossiants, Position, Quaternion.identity);
+
+        Debug.Log($"Mini spawned at {Position}");
+
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(spawnMinis());
+    }
 }
 

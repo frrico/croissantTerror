@@ -878,7 +878,7 @@ MonoBehaviour:
   maxChaseTime: 20
   jumpscareTime: 3
   walking: 0
-  chasing: 0
+  chasing: 1
   player: {fileID: 2318872722605358154, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
   destinationAmount: 1
   rayCastOffset: {x: 0, y: 0, z: 0}

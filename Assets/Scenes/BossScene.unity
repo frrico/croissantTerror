@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09181083, g: 0.09337396, b: 0.1518588, a: 1}
+  m_IndirectSpecularColor: {r: 0.09181083, g: 0.093374155, b: 0.1518588, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11853,10 +11853,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  BossTrans: {fileID: 1145148535}
   hitSound: {fileID: 8300000, guid: 90888512d15126e419388568c6564fe3, type: 3}
   hitMaterial: {fileID: 2100000, guid: 85e06057a9ca1a24b97db22c1533c872, type: 2}
   skinnedMeshRenderer: {fileID: 1145148527}
   originalMaterial: {fileID: 0}
+  crossiants: {fileID: 8670442467289521936, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
+  swarmerInterval: 3.5
   gameManager: {fileID: 669853778}
 --- !u!65 &1145148530
 BoxCollider:
@@ -11975,6 +11978,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1145148535 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8293459875647751594, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
+  m_PrefabInstance: {fileID: 289457828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1167870880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62490,6 +62498,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2633442401127724991, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2832062117928773554, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
@@ -62497,6 +62509,10 @@ PrefabInstance:
     - target: {fileID: 3974416971830429060, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460000141776081835, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5860368701010832477, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_AllowMSAA

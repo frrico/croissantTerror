@@ -235,7 +235,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -721,15 +721,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.685
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.143191
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_LocalRotation.w
@@ -793,7 +793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_Name
-      value: _TerrifyingCroissant
+      value: Mini
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7eb6904c8757a564bae72aeedfc2e329, type: 3}
       propertyPath: m_TagString
@@ -866,13 +866,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   aiAnim: {fileID: 6736320180469495576}
-  walkSpeed: 3
-  chaseSpeed: 5
+  walkSpeed: 7
+  chaseSpeed: 7
   minIdleTime: 2
   maxIdleTime: 9
   idleTime: 0
   sightDistance: 10
-  catchDistance: 1.5
+  catchDistance: 3
   chaseTime: 0
   minChaseTime: 10
   maxChaseTime: 20
@@ -881,8 +881,8 @@ MonoBehaviour:
   chasing: 0
   player: {fileID: 2318872722605358154, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
   destinationAmount: 1
-  rayCastOffset: {x: 0, y: 0, z: 0}
-  deathScene: backup2
+  rayCastOffset: {x: 0, y: 1, z: 0}
+  deathScene: backup
 --- !u!195 &2119891037622897696
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -892,17 +892,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 8670442467289521936}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.41
+  m_Radius: 1.44
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.1
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.8
-  m_BaseOffset: 0.38
+  m_Height: 1.79
+  m_BaseOffset: 1.55
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &6736320180469495576
