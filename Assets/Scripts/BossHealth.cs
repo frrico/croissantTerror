@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class BossHealth : MonoBehaviour
 {
@@ -15,6 +16,15 @@ public class BossHealth : MonoBehaviour
     public Material hitMaterial;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public Material originalMaterial;
+
+    [SerializeField]
+    private GameObject crossiants;
+    [SerializeField]
+    private float swarmerInterval = 3.5f;
+
+    private float cordsx;
+    private float cordsy;
+
 
     public GameManager gameManager;
     // Start is called before the first frame update
@@ -29,7 +39,15 @@ public class BossHealth : MonoBehaviour
         {
             originalMaterial = skinnedMeshRenderer.material;
         }
+
+        StartCoroutine(spawncrossiants(swarmerInterval, crossiants));
         
+    }
+
+    private void Update()
+    {
+        cordsx = this.transform.position.x;
+        cordsy = this.transform.position.y;
     }
 
     public void TakeDamage(int damage)
@@ -66,5 +84,14 @@ public class BossHealth : MonoBehaviour
         gameManager.WinGame();
         
     }
+
+   // _____________________Coroutine to coninously spawn crossiants_____________________________//
+    private IEnumerator spawncrossiants(float interval , GameObject enemy)
+    {
+        yield return new WaitForSeconds (interval);
+        GameObject newEnemy = Instantiate(enemy , new Vector3 (cordsx, cordsy, 0),Quaternion.identity);
+        StartCoroutine(spawncrossiants(interval, enemy));
+    }
+    // _________________________________________________________________________________________//
 }
 
