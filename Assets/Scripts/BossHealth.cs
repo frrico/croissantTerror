@@ -20,35 +20,40 @@ public class BossHealth : MonoBehaviour
     [SerializeField]
     private GameObject crossiants;
     [SerializeField]
-    private float swarmerInterval = 3.5f;
+    public float swarmerInterval = 3.5f;
 
     private float cordsx;
-    private float cordsy;
-
+    public float cordsy;
+    private float cordsz;
+    private float bigposition;
 
     public GameManager gameManager;
     // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
-       
+
 
         //get skinnedmeshrenderer component
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        if(skinnedMeshRenderer != null)
+        if (skinnedMeshRenderer != null)
         {
             originalMaterial = skinnedMeshRenderer.material;
         }
 
         StartCoroutine(spawncrossiants(swarmerInterval, crossiants));
-        
+
     }
 
     private void Update()
     {
-        cordsx = this.transform.position.x;
-        cordsy = this.transform.position.y;
+        //cordsx = this.transform.position.x;
+        ////cordsy = this.transform.position.y;
+        //cordsz = this.transform.position.z;
+
     }
+
 
     public void TakeDamage(int damage)
     {
@@ -85,13 +90,15 @@ public class BossHealth : MonoBehaviour
         
     }
 
-   // _____________________Coroutine to coninously spawn crossiants_____________________________//
-    private IEnumerator spawncrossiants(float interval , GameObject enemy)
+    // _____________________Coroutine to coninously spawn crossiants_____________________________//
+    private IEnumerator spawncrossiants(float interval, GameObject enemy)
     {
-        yield return new WaitForSeconds (interval);
-        GameObject newEnemy = Instantiate(enemy , new Vector3 (cordsx, cordsy, 0),Quaternion.identity);
+        yield return new WaitForSeconds(interval);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-49f, 42f), cordsy, Random.Range(-21f, 38f)), Quaternion.identity);
         StartCoroutine(spawncrossiants(interval, enemy));
     }
     // _________________________________________________________________________________________//
+
+
 }
 

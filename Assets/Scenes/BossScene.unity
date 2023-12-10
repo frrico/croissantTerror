@@ -11857,6 +11857,9 @@ MonoBehaviour:
   hitMaterial: {fileID: 2100000, guid: 85e06057a9ca1a24b97db22c1533c872, type: 2}
   skinnedMeshRenderer: {fileID: 1145148527}
   originalMaterial: {fileID: 0}
+  crossiants: {fileID: 8670442467289521936, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
+  swarmerInterval: 3.5
+  cordsy: 0
   gameManager: {fileID: 669853778}
 --- !u!65 &1145148530
 BoxCollider:
@@ -17605,7 +17608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -290, y: -135}
+  m_AnchoredPosition: {x: -290, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380766903
