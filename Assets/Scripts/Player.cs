@@ -58,6 +58,9 @@ public class PlayerMovement : MonoBehaviour
     public float pickupRange = 2f;
     public TextMeshProUGUI pickupText;
 
+    public TextMeshProUGUI reloadText;
+    
+
     //interaction distance
     public float interactionRange = 5f;
     void Start()
@@ -76,6 +79,11 @@ public class PlayerMovement : MonoBehaviour
         if(pickupText != null)
         {
             pickupText.gameObject.SetActive(false);
+        }
+
+        if (reloadText != null)
+        {
+            reloadText.gameObject.SetActive(false);
         }
 
     }
@@ -336,6 +344,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (ammo <=0 )
             {
+                ShowReloadPrompt();
                 reload();
             }
 
@@ -355,9 +364,22 @@ public class PlayerMovement : MonoBehaviour
         Throw.SetActive(false);
     }
 
+    //display reload text
+    void ShowReloadPrompt()
+    {
+        reloadText.gameObject.SetActive(true);
+    }
+
+    //hide reload prompt
+    void HideReloadText()
+    {
+        reloadText.gameObject.SetActive(false);
+    }
+
 
     void reload()
     {
+        HideReloadText(); //hide reload
 
         // yield return new WaitForSeconds(3);
         Invoke("completeReload", 3f);

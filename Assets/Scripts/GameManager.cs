@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI interactionPrompt;
 
     public string winScene = "WinScene";
+    public string bossScene = "BossScene";
 
     void Start()
     {
@@ -61,13 +62,18 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void LoadBoss()
+    {
+        SceneManager.LoadScene(bossScene);
+    }
+
     public void TryInteractWithObjective()
     {
         if (collectedItems == totalItems)
         {
-            // Player has all items, trigger win condition
+            // Player has all items, trigger boss scene
             
-            WinGame();
+            LoadBoss();
         }
         else
         {
