@@ -76490,7 +76490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -290, y: -135}
+  m_AnchoredPosition: {x: -290, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380766903
@@ -113068,6 +113068,14 @@ PrefabInstance:
     - target: {fileID: 3974416971830429060, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016223612832868482, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400995977880999755, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5860368701010832477, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_AllowMSAA
