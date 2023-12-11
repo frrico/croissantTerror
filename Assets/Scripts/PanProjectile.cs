@@ -10,7 +10,7 @@ public class PanProjectile : MonoBehaviour
     {
         Debug.Log("Collision detected!");
         //check if pan collides with boss
-        if (collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Croissant"))
         {
             BossHealth boss = collision.gameObject.GetComponent<BossHealth>();
             if (boss != null)

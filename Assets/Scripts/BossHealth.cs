@@ -19,7 +19,10 @@ public class BossHealth : MonoBehaviour
     public Material originalMaterial;
 
     [SerializeField]
-    private GameObject crossiants;
+    public GameObject miniCrossiants;
+
+    public EnemyPoolManager enemyPoolManager;
+
     [SerializeField]
     private float swarmerInterval = 3.5f;
 
@@ -105,12 +108,31 @@ public class BossHealth : MonoBehaviour
     {
 
         Vector3 Position = new Vector3(cordsx, cordsy -1, cordsz);
-        GameObject mini = Instantiate(crossiants, Position, Quaternion.identity);
+        //find all game objects with player tag
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-        Debug.Log($"Mini spawned at {Position}");
+        if(players.Length > 0)
+        {
+            GameObject playerObject = players[0];
+            GameObject mini = enemyPoolManager.GetPooledEnemy();
+        
+        
+            if(mini != null)
+            {
+           
+             mini.GetComponent<EnemyAI>().SetTarget(playerObject.transform);
+             mini.transform.position = Position;
+             mini.SetActive(true);
+             Debug.Log($"Mini spawned at {Position}");
+            }
+        
+        
+        
+        
 
         yield return new WaitForSeconds(2f);
         StartCoroutine(spawnMinis());
     }
+}
 }
 

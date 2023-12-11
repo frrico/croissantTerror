@@ -55,6 +55,12 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    public void SetTarget(Transform newTarget)
+    {
+        player = newTarget;
+
+    }
+
     void Update()
 
     {

@@ -59,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI pickupText;
 
     public TextMeshProUGUI reloadText;
+
+    public TextMeshProUGUI ammoCountText;
     
 
     //interaction distance
@@ -85,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
         {
             reloadText.gameObject.SetActive(false);
         }
+
+        UpdateAmmoUI();
 
     }
 
@@ -350,6 +354,8 @@ public class PlayerMovement : MonoBehaviour
 
             // Destroy each projectile after 5 seconds
             Destroy(proj, 5f);
+
+            UpdateAmmoUI();
         }
     }
 
@@ -367,19 +373,25 @@ public class PlayerMovement : MonoBehaviour
     //display reload text
     void ShowReloadPrompt()
     {
-        reloadText.gameObject.SetActive(true);
+        if(reloadText!= null)
+        {
+            reloadText.gameObject.SetActive(true);
+        }
+       
     }
 
     //hide reload prompt
     void HideReloadText()
     {
-        reloadText.gameObject.SetActive(false);
+        if(reloadText != null)
+        {
+            reloadText.gameObject.SetActive(false);
+        }
     }
 
 
     void reload()
     {
-        HideReloadText(); //hide reload
 
         // yield return new WaitForSeconds(3);
         Invoke("completeReload", 3f);
@@ -391,6 +403,17 @@ public class PlayerMovement : MonoBehaviour
         ammo = 5;
 
         Debug.Log("reload");
+        HideReloadText();
+        UpdateAmmoUI();
+    }
+
+    void UpdateAmmoUI()
+    {
+        //update ammo count
+        if(ammoCountText != null)
+        {
+            ammoCountText.text = ammo.ToString();
+        }
     }
 
 }
