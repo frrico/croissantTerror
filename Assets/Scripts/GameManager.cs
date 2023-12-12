@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
             interactionPrompt.gameObject.SetActive(false);
         }
 
-        transitionAnim.SetTrigger("Start");
+        
         transitionImage.SetActive(false);
 
         

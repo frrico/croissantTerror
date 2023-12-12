@@ -37307,8 +37307,9 @@ MonoBehaviour:
   interactionPrompt: {fileID: 781860497}
   winScene: WinScene
   bossScene: BossScene
+  ammoCountText: {fileID: 0}
   transitionImage: {fileID: 1586056464}
-  transitionAnim: {fileID: 0}
+  transitionAnim: {fileID: 4425850544359958262}
 --- !u!4 &669853779
 Transform:
   m_ObjectHideFlags: 0
@@ -112906,3 +112907,8 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 197679238}
   m_SourcePrefab: {fileID: 100100000, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
+--- !u!95 &4425850544359958262 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2060857770144366800, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
+  m_PrefabInstance: {fileID: 4425850544359958261}
+  m_PrefabAsset: {fileID: 0}
