@@ -38481,6 +38481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0ddc50edd86234e85dda2a4edc0a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionAnim: {fileID: 0}
+  transitionImage: {fileID: 0}
 --- !u!114 &987387966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90974,6 +90976,14 @@ PrefabInstance:
     - target: {fileID: 6613156026892421625, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: lookXLimit
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613156026892421625, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
+      propertyPath: pickupText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613156026892421625, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
+      propertyPath: reloadText
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7493947848000669775, guid: 3766ee523ef24a14688f4f5e3a5ec2f0, type: 3}
       propertyPath: m_StaticEditorFlags

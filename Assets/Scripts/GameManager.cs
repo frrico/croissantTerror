@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
     public string winScene = "WinScene";
     public string bossScene = "BossScene";
 
+    public GameObject ammoCountText;
+
+    public GameObject transitionImage;
+    [SerializeField] Animator transitionAnim;
+
     void Start()
     {
         collectedItems = 0;
@@ -29,6 +34,11 @@ public class GameManager : MonoBehaviour
         {
             interactionPrompt.gameObject.SetActive(false);
         }
+
+        transitionAnim.SetTrigger("Start");
+        transitionImage.SetActive(false);
+
+        
     }
 
     public void ItemCollected()
@@ -55,16 +65,32 @@ public class GameManager : MonoBehaviour
        // return randomPosition;
    // }
 
-
-    public void WinGame()
+    public void LoadWinGame()
     {
+        StartCoroutine(WinGame());
+    }
+
+    public IEnumerator WinGame()
+    {
+        ammoCountText.SetActive(false);
+        transitionImage.SetActive(true);
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(winScene);
+        transitionAnim.SetTrigger("Start");
         
     }
 
-    public void LoadBoss()
+    
+
+
+    public IEnumerator LoadBoss()
     {
-        SceneManager.LoadScene(bossScene);
+        transitionImage.SetActive(true);
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        transitionAnim.SetTrigger("Start");
     }
 
     public void TryInteractWithObjective()
@@ -73,7 +99,7 @@ public class GameManager : MonoBehaviour
         {
             // Player has all items, trigger boss scene
             
-            LoadBoss();
+            StartCoroutine(LoadBoss());
         }
         else
         {

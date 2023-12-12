@@ -14,6 +14,11 @@ public class BossHealth : MonoBehaviour
 
     public AudioClip hitSound;
 
+    public AudioClip dieSound;
+
+    private AudioSource hitAudioSource;
+    public GameObject deathAudioSource;
+
     public Material hitMaterial;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public Material originalMaterial;
@@ -49,6 +54,11 @@ public class BossHealth : MonoBehaviour
         //StartCoroutine(spawncrossiants(swarmerInterval, crossiants, transform.position));
         StartCoroutine(spawnMinis());
 
+        hitAudioSource = gameObject.AddComponent<AudioSource>();
+
+        deathAudioSource.SetActive(false);
+
+
     }
 
     private void Update()
@@ -64,7 +74,8 @@ public class BossHealth : MonoBehaviour
 
         if (hitSound != null)
         {
-            AudioSource.PlayClipAtPoint(hitSound, transform.position);
+            hitAudioSource.PlayOneShot(hitSound);
+            
         }
 
         //highlight red when hit
@@ -88,8 +99,9 @@ public class BossHealth : MonoBehaviour
 
     void BossDie()
     {
+        deathAudioSource.SetActive(true);
         Destroy(gameObject);
-        gameManager.WinGame();
+        gameManager.LoadWinGame();
         
     }
 
