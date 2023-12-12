@@ -37007,7 +37007,7 @@ MonoBehaviour:
   hitMaterial: {fileID: 2100000, guid: 85e06057a9ca1a24b97db22c1533c872, type: 2}
   skinnedMeshRenderer: {fileID: 1145148527}
   originalMaterial: {fileID: 0}
-  miniCrossiants: {fileID: 0}
+  miniCrossiants: {fileID: 8670442467289521936, guid: 2853dfafb827753459ecdf1b1e4a0095, type: 3}
   enemyPoolManager: {fileID: 1914898030}
   swarmerInterval: 3.5
   gameManager: {fileID: 669853778}

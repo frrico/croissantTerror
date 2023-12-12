@@ -6,6 +6,7 @@ using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(CharacterController))]
@@ -68,13 +69,24 @@ public class PlayerMovement : MonoBehaviour
     void Start()
 
     {
+        //helps to lock and unlock cursor so user can press buttons on win scene
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "WinScene")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+
+            Cursor.visible = false;
+        }
 
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
 
-        Cursor.lockState = CursorLockMode.Locked;
-
-        Cursor.visible = false;
         Footstep.SetActive(false);
         Throw.SetActive(false);
 
