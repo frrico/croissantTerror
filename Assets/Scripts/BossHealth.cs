@@ -24,7 +24,6 @@ public class BossHealth : MonoBehaviour
     public Material originalMaterial;
 
     [SerializeField]
-    public GameObject miniCrossiants;
 
     public EnemyPoolManager enemyPoolManager;
 
@@ -137,11 +136,6 @@ public class BossHealth : MonoBehaviour
              mini.SetActive(true);
              Debug.Log($"Mini spawned at {Position}");
             }
-        
-        
-        
-        
-
         yield return new WaitForSeconds(2f);
         StartCoroutine(spawnMinis());
     }

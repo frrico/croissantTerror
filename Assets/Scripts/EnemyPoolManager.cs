@@ -27,14 +27,16 @@ public class EnemyPoolManager : MonoBehaviour
 
     public GameObject GetPooledEnemy()
     {
-        foreach (GameObject miniEnemy in miniEnemies)
+        if(miniEnemies != null)
+        {
+            foreach (GameObject miniEnemy in miniEnemies)
         {
             if (!miniEnemy.activeInHierarchy)
             {
                 return miniEnemy;
             }
         }
-
+        }
         return null;
     }
 }
