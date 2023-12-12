@@ -309,7 +309,9 @@ public class PlayerMovement : MonoBehaviour
     void interactWithObjective()
     {
         Debug.Log("interacting");
+
         float distanceToObjective = Vector3.Distance(transform.position, gameManager.objectiveArea.position);
+
         Debug.Log("distance: " + distanceToObjective);
 
         if (distanceToObjective <= interactionRange)
